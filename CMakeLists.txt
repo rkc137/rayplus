@@ -16,14 +16,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
-add_library(rayplus INTERFACE)
-target_include_directories(rayplus INTERFACE ${PROJECT_SOURCE_DIR}/include)
-
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-add_library(rayplus_sources STATIC ${SOURCES})
-target_link_libraries(rayplus_sources PRIVATE raylib rayplus)
+add_library(rayplus STATIC ${SOURCES})
+
+target_include_directories(rayplus PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(rayplus PUBLIC raylib)
+
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
 set(RAYPLUS_LITERAL_VERSION 0.1.0)
 set(RAYPLUS_LITERAL_GIT_REPOSITORY "https://github.com/rkc137/rayplus.git")
 set(RAYPLUS_LITERAL_LIB_GIT_TAG "v${RAYPLUS_LITERAL_VERSION}")
+
