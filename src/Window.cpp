@@ -14,8 +14,7 @@ WindowCloser::~WindowCloser()
 
 WindowCloser init(Vector2<int> size, std::string title, int target_fps)
 {
-    window_size = size;
-    InitWindow(window_size.x, window_size.y, title.c_str());
+    InitWindow(size.x, size.y, title.c_str());
     SetTargetFPS(target_fps);
     return WindowCloser{};
 }
@@ -28,6 +27,19 @@ bool should_close()
 void set_title(std::string title)
 {
     SetWindowTitle(title.c_str());
+}
+
+void set_size(Vector2<int> size)
+{
+    SetWindowSize(size.x, size.y);
+}
+
+Vector2<int> get_size()
+{
+    return {
+        GetScreenWidth(),
+        GetScreenHeight()
+    };
 }
 
 } // namespace rayplus::window
