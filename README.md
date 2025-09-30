@@ -26,7 +26,7 @@ For example, in the main version of raylib you can’t create more than one wind
 ```C++
 #include "raylib-cpp.hpp"
 int main() {
-    raylib::Window window(800, 600, "ma window");
+    raylib::Window window(800, 600, "raylib");
     // what will happen if i make another window or move this one?
     // will it casuse double call of InitWindow and CloseWindow?
 }
@@ -37,7 +37,7 @@ Also, like in [SFML](https://www.sfml-dev.org), a position isn’t represented b
 #include <rayplus>
 int main() {
     auto win_closer = rayplus::window::init(
-        {800, 600}, "ma window", 10
+        {800, 600}, "rayplus", 10
     );
 }
 ```
@@ -56,14 +56,14 @@ void draw() {
 	rayplus::Drawler drawler;
 	auto &ctx = rayplus::Drawler::ctx; // drawler.ctx works as well
 	ctx.clear();
-	ctx.draw_text("Text", 190, 200, 20, rayplus::color::LIGHTGRAY);
+	ctx.draw_text("Text", 190, 200, 20, rayplus::lightgray);
 }
 ```
 The second way is the `rayplus::draw` function, which I personally prefer because it creates a new scope for drawing, though some of you might find it uglier:
 ```C++
 rayplus::draw([&](rayplus::DrawContext &ctx){
 	ctx.clear();
-	ctx.draw_text("Text", 190, 200, 20, rayplus::color::LIGHTGRAY);
+	ctx.draw_text("Text", 190, 200, 20, rayplus::lightgray);
 });
 ```
 And the main reason: **raylib-cpp doesn’t hide** `raylib.h`, which clutters your scope with all that C stuff.  
