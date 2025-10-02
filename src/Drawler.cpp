@@ -21,7 +21,7 @@ Drawler::~Drawler()
     EndDrawing();
 }
 
-} // namespace 
+} // namespace rayplus
 
 void rayplus::DrawContext::clear(rayplus::Color color)
 {
