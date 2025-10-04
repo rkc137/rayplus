@@ -1,9 +1,8 @@
 
 # Rayplus
-- [Rayplus](#rayplus)
-    - [What is this?](#what-is-this)
-    - [How to use it?](#how-to-use-it)
-    - [Why you need this?](#why-you-need-this)
+- [What?](#what-is-this)
+- [How?](#how-to-use-it)
+- [Why?](#why-you-need-this)
 ### What is this?
 A small wrapper for [raylib](https://www.raylib.com/) that makes it feel more C++ish.
 ### How to use it?
