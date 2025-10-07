@@ -24,6 +24,21 @@ bool should_close()
     return WindowShouldClose();
 }
 
+void toggle_fullscreen()
+{
+    ToggleFullscreen();
+}
+
+void toggle_borderless_windowed()
+{
+    ToggleBorderlessWindowed();
+}
+
+void set_target_fps(int fps)
+{
+    return SetTargetFPS(fps);
+}
+
 void set_title(std::string title)
 {
     SetWindowTitle(title.c_str());
