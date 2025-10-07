@@ -8,7 +8,7 @@ namespace rayplus::keyboard
 using raylib_key_t = int;
 static constexpr raylib_key_t ci(Key key)
 {
-    return static_cast<int>(key);
+    return static_cast<raylib_key_t>(key);
 }
 
 bool is_down(Key key)
