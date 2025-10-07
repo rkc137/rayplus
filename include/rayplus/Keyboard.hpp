@@ -10,7 +10,10 @@ enum class Key;
 [[nodiscard]] bool is_up(Key key);
 [[nodiscard]] bool is_released(Key key);
 [[nodiscard]] bool is_pressed(Key key);
-// [[nodiscard]] bool is_pressed(Key key);
+[[nodiscard]] Key get_key_pressed();
+[[nodiscard]] int get_char_pressed();
+// TODO: [[nodiscard]] std::string get_key_name(Key key);
+void set_exit_key(Key key);
 
 enum class Key
 {
